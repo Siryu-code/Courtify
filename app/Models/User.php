@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -21,7 +20,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
+        'role',
+        'profile_photo',
     ];
 
     /**
@@ -45,5 +47,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // Relasi ke Booking (one-to-many)
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+    // Relasi ke VenueRating (one-to-many)
+    public function ratings()
+    {
+        return $this->hasMany(VenueRating::class);
     }
 }

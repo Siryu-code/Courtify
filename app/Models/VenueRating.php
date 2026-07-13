@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class VenueRating extends Model
+{
+    protected $fillable = [
+        'venue_id',
+        'user_id',
+        'rating',
+    ];
+
+    // Relasi ke Venue
+    public function venue()
+    {
+        return $this->belongsTo(Venue::class);
+    }
+
+    // Relasi ke User
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
