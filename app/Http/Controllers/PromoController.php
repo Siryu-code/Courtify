@@ -15,6 +15,6 @@ class PromoController extends Controller
 
         $allPromotions = Promotion::orderBy('start_date', 'desc')->get();
 
-        return view('promo.index', compact('promotions', 'allPromotions'));
+        return view('promos/index', compact('promotions', 'allPromotions'));
     }
 }

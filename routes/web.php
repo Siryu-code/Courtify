@@ -14,7 +14,7 @@ use App\Http\Controllers\Admin\AdminPromoController;
 use App\Http\Controllers\Admin\AdminUserController;
 
 // ===== PUBLIK =====
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/venues/{id}', [VenueController::class, 'show'])->name('venue.show');
 Route::get('/promos', [PromoController::class, 'index'])->name('promos');
 
